@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+* {
+    box-sizing: border-box;
+    cursor: url("aim.svg") 5 15, pointer;
+}
+
+body {
+    color: #fff;
+    font-family: "Anton", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    /* letter-spacing: 0.1rem; */
+    margin: 0;
+    text-align: center;
+    text-shadow: 4px 4px 0px #000;
+    text-transform: uppercase;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s linear 0s;
+}
+
+a:hover {
+    color: #2e852e;
+}
+
+.start {
+    font-size: 2rem;
+    text-shadow: none;
+    border: 5px solid #000;
+    padding: 10px;
+    padding-right: 5px;
+    background: rgb(146, 23, 23);
+    letter-spacing: 0.5rem;
+}
+.start:hover {
+    background: rgb(212, 209, 20);
+}
+.repeat {
+    font-size: 2rem;
+    text-shadow: none;
+    border: 5px solid #000;
+    padding: 10px;
+    padding-right: 5px;
+    background: rgb(146, 23, 23);
+    letter-spacing: 0.5rem;
+}
+.repeat:hover {
+    background: rgb(212, 209, 20);
+}
+h1 {
+    line-height: 1.4;
+    font-size: 4rem;
+    color: #fff;
+    animation: wavesColor 5s linear 0s infinite;
+}
+h2 {
+    line-height: 1.4;
+    font-size: 4rem;
+    color: #fff;
+}
+@keyframes wavesColor {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: #174e1a;
+    }
+}
+/* linear-gradient(90deg, #ff0000 0%, #ee7300 100%); */
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: margin 0.5s ease-out;
+    background-color: #ff0000;
+}
+.screen:first-child {
+    padding-right: 150px;
+    background-image: url("soldier.png");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    align-items: flex-end;
+    justify-content: center;
+}
+.screen:nth-child(3) {
+    padding-bottom: 60px;
+
+    background: url("monkey.png") no-repeat left bottom,
+        url("monkey2.png") no-repeat right top;
+    background-color: #ff0000;
+    background-size: 350px 250px;
+}
+
+.screen.up {
+    margin-top: -100vh;
+}
+
+.time-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.time-list li {
+    margin: 10px;
+}
+
+.time-btn {
+    background-color: transparent;
+    border: 5px solid #fff;
+    color: #fff;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    transition: all 0.2s linear 0s;
+}
+.time-btn:hover {
+    border: 5px solid #000;
+    color: #2e852e;
+    background: rgb(212, 209, 20);
+}
+
+.hide {
+    opacity: 0;
+}
+
+.primary {
+    color: rgb(146, 23, 23);
+}
+
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 5px solid #000;
+    background: linear-gradient(118.38deg, #174e1a -4.6%, #61701b 200.44%);
+    overflow: hidden;
+    z-index: inherit;
+}
+.circle {
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #000;
+    background-image: url("enemy.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.time-btn--choose {
+    background-color: transparent;
+    border: 5px solid #fff;
+    color: #fff;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    transition: all 0.2s linear 0s;
+}
+.time-btn--choose:hover {
+    border: 5px solid #000;
+    color: #2e852e;
+    background: rgb(212, 209, 20);
+}
+
+.screen-end h1 {
+    margin-bottom: 30px;
+    width: 100%;
+}
+@media (max-width: 1235px) {
+    .screen:nth-child(3) {
+        background-size: 20% auto;
+    }
+}
+@media (max-width: 600px) {
+    .screen:first-child {
+        align-items: center;
+        padding-right: 0;
+        background-size: 300px 400px;
+    }
+    .board {
+        width: 90%;
+        height: 60%;
+        transform: translateY(-50px);
+    }
+    .screen:nth-child(3) {
+        padding-top: 0;
+        padding-bottom: 0px;
+    }
+    .screen:nth-child(3) h3 {
+        transform: translateY(-50px);
+    }
+}
